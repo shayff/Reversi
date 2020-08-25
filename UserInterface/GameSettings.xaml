@@ -1,0 +1,38 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserInterface"
+        xmlns:Collections="clr-namespace:System.Collections;assembly=System.Runtime.Extensions" x:Class="UserInterface.GameSettings"
+        mc:Ignorable="d" FontFamily="Segoe UI Light"
+        Title="Reversi Game" Height="200" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid AutomationProperties.ItemType="int">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="TextBlock" TextWrapping="Wrap" FontSize="22"/>
+        <Label x:Name="BoardSizeLabel" Grid.Column="1" Grid.Row="2" Content="Board size"/>
+        <ComboBox x:Name="BoardSizes_ComboBox" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Width="140"/>
+        <Label x:Name="GameTypeLabel" Grid.Column="1" Grid.Row="3" Content="Game type" />
+        <RadioButton Name="GameTypePlayerRadioBtn"  Grid.Column="2" Grid.Row="3" GroupName="GameType" Content="Player" IsChecked="True" IsThreeState="True" Checked="RadioButton_Checked" VerticalAlignment="Center"/>
+        <RadioButton Name="GameTypeComputerRadioBtn" Grid.Column="3" Grid.Row="3" GroupName="GameType" Content="Computer"  Checked="RadioButton_Checked" VerticalAlignment="Center"/>
+        <Button Content="Start New Game" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="4" IsCancel="True" Height="27" Width="140" Click="Button_Click"/>
+    </Grid>
+</Window>
